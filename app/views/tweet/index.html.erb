@@ -1,0 +1,24 @@
+<style>
+div #one{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    width: 100px;
+}
+</style>
+
+
+<ul class="list-group">
+    <% @tweets.reverse.each do |tweet| %>
+        <li class="list-group-item">
+             <div id="one"><p><%=tweet.contents%></p></div>
+            <small><%=tweet.ip_address%></small>
+                <p align="right">
+                    <a class="btn btn-info" href="/tweet/<%=tweet.id%>">보기</a>
+                </p>
+        </li>
+    <% end %>
+</ul>        
+<div class="text-center"><br><br>
+   <a href="/tweet/new" ><img src="Twitter_bird.png" width="5%"></a><br><br>
+</div>
