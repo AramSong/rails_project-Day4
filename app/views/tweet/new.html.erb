@@ -1,8 +1,7 @@
-<form action ="/tweet/create" method="POST">
-	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+<%= form_tag('/tweet/create') do %>
 	<p align="right">
-	<input class="form-control" type="text" name="contents" placeholder="무슨 일이 일어나고 있나요?">
-	<br><br>
-	<input class="btn btn-info" type="submit" value="트윗">
+		<%=text_area_tag :contents, nil, class: "form-control"%>
+		<br><br>
+		<%=submit_tag "작성하기",class:"btn btn-info" %>
 	</p>
-</form>
+<% end %>

@@ -11,14 +11,20 @@ div #one{
 <ul class="list-group">
     <% @tweets.reverse.each do |tweet| %>
         <li class="list-group-item">
-             <div id="one"><p><%=tweet.contents%></p></div>
-            <small><%=tweet.ip_address%></small>
-                <p align="right">
+           <%=link_to truncate(tweet.contents,length:10),"/tweet/#{tweet.id}"%>
+           <p align="right"><%=tweet.created_at %></p>
+           <p align ="right"> <small><%=tweet.ip_address%></small></p>
+        <!--        <p align="right">
                     <a class="btn btn-info" href="/tweet/<%=tweet.id%>">보기</a>
-                </p>
+                </p>-->
         </li>
     <% end %>
 </ul>        
 <div class="text-center"><br><br>
    <a href="/tweet/new" ><img src="Twitter_bird.png" width="5%"></a><br><br>
 </div>
+
+
+
+
+
